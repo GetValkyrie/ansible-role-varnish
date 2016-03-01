@@ -82,13 +82,13 @@ VARNISH_MIN_THREADS=50
 VARNISH_MAX_THREADS=1000
 #
 # # Idle timeout for worker threads
-VARNISH_THREAD_TIMEOUT=120
+VARNISH_THREAD_TIMEOUT="{{ varnish_thread_timeout }}"
 #
 # # Backend storage specification
 VARNISH_STORAGE="{{ varnish_storage }}"
 #
 # # Default TTL used when the backend does not specify one
-VARNISH_TTL=120
+VARNISH_TTL="{{ varnish_ttl }}"
 #
 # # DAEMON_OPTS is used by the init script.  If you add or remove options, make
 # # sure you update this section, too.

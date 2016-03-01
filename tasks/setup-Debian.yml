@@ -8,7 +8,11 @@
     state: present
 
 - name: Install Varnish.
-  apt: name=varnish state=installed
+  apt:
+    name: varnish
+    state: installed
+    update_cache: yes
+    cache_valid_time: 3600
 
 - name: Copy Varnish configuration.
   template:
@@ -17,3 +21,4 @@
     owner: root
     group: root
     mode: 0755
+  notify: restart varnish
